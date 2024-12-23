@@ -1,0 +1,21 @@
+{
+  "id": "com.gitea.act-runner.cloudronapp",
+  "title": "Gitea Act Runner",
+  "author": "Gitea",
+  "description": "Gitea Actions runner.",
+  "version": "0.1.0",
+  "healthCheckPath": "/",
+  "httpPort": 80,
+  "tcpPorts": {
+    "CACHE_PORT": {
+      "title": "Actions cache port",
+      "description": "Port for actions/cache",
+      "defaultValue": 8088
+    }
+  },
+  "addons": {
+    "localstorage": {}
+  },
+  "icon": "file://logo.png",
+  "manifestVersion": 2
+}

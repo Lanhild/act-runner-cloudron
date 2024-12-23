@@ -1,6 +1,6 @@
 {
-  "name": "io.cloudron.cloudronapp",
-  "description": "Cloudron starter application",
+  "name": "com.gitea.act-runner.cloudronapp",
+  "description": "Cloudron Gitea act runner",
   "scripts": {
     "prepare:init": "npm i && cloudron init",
     "build": "bash scripts/build.sh",
