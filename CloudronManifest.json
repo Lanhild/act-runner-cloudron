@@ -4,16 +4,9 @@
   "author": "Gitea",
   "description": "Gitea Actions runner.",
   "postInstallMessage": "file://POSTINSTALL.md",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "healthCheckPath": "/",
-  "httpPort": 80,
-  "tcpPorts": {
-    "CACHE_PORT": {
-      "title": "Actions cache port",
-      "description": "Port for actions/cache",
-      "defaultValue": 8088
-    }
-  },
+  "httpPort": 8088,
   "addons": {
     "localstorage": {}
   },

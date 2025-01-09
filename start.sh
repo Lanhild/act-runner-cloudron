@@ -12,7 +12,7 @@ chown -R cloudron:cloudron /app/data
 
 if [[ ! -f /app/data/act/.runner ]]; then
     echo "/!\ Register the runner locally first. /!\\"
-    exec gosu cloudron:cloudron /app/code/act_runner cache-server -p 80
+    exec gosu cloudron:cloudron /app/code/act_runner cache-server -p 8088
 else
     echo "==> Starting runner"
     exec gosu cloudron:cloudron /app/code/act_runner -c /app/data/act/config.yaml daemon
