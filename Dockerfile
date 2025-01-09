@@ -10,7 +10,7 @@ RUN wget -P /app/code/ https://gitea.com/gitea/act_runner/releases/download/v${V
 RUN mv /app/code/act_runner-${VERSION}-linux-amd64 /app/code/act_runner && \
     chmod +x /app/code/act_runner
 
-COPY start.sh /app/pkg/
+COPY config.yaml start.sh /app/pkg/
 
 CMD [ "/app/pkg/start.sh" ]
 

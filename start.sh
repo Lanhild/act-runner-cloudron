@@ -2,19 +2,17 @@
 set -eu
 
 echo "=> Ensure directories"
-mkdir -p /app/data/
+mkdir -p /app/data/act
 
-if [[ ! -f /app/data/config.yaml ]]; then
-    echo "=> Generating runner configuration"
-    /app/code/act_runner generate-config > /app/data/config.yaml
-fi
+[[ ! -f /app/data/act/config.yaml ]] && cp /app/pkg/config.yaml /app/data/act/config.yaml
 
-echo "=> Setting permissions"
+echo "==> Update permissions"
 chown -R cloudron:cloudron /app/data
 
 
 if [[ ! -f /app/data/.runner ]]; then
     echo "/!\ Register the runner locally first. /!\\"
+    exec gosu cloudron:cloudron /app/code/act_runner cache-server -p 80
 else
     echo "==> Starting runner"
     exec gosu cloudron:cloudron /app/code/act_runner -c /app/data/config.yaml daemon
