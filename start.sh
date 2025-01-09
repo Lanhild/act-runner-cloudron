@@ -10,10 +10,10 @@ echo "==> Update permissions"
 chown -R cloudron:cloudron /app/data
 
 
-if [[ ! -f /app/data/.runner ]]; then
+if [[ ! -f /app/data/act/.runner ]]; then
     echo "/!\ Register the runner locally first. /!\\"
     exec gosu cloudron:cloudron /app/code/act_runner cache-server -p 80
 else
     echo "==> Starting runner"
-    exec gosu cloudron:cloudron /app/code/act_runner -c /app/data/config.yaml daemon
+    exec gosu cloudron:cloudron /app/code/act_runner -c /app/data/act/config.yaml daemon
 fi
