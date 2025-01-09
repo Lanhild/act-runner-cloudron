@@ -3,6 +3,7 @@
   "title": "Gitea Act Runner",
   "author": "Gitea",
   "description": "Gitea Actions runner.",
+  "postInstallMessage": "file://POSTINSTALL.md",
   "version": "0.1.0",
   "healthCheckPath": "/",
   "httpPort": 80,

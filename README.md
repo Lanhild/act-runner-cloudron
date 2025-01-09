@@ -1,10 +1,10 @@
-# Starter Cloudron App
+# Gitea Act Runner Cloudron App
 
 <!-- This is the place for the description of your application. It's usage, description, and potential dependencies. -->
 
-This repository contains the Cloudron app package source for <Project>, a template Cloudron application.
+This repository contains the Cloudron app package source for the Gitea Act Runner, the runner of Gitea Actions.
 
-The package aims to set global development standards for Cloudron packages to ensure uniformity and ease of sharing.
+The application solely runs a standalone binary from the code directory and writes data to the `/app/data/` directory.
 
 ## Configuration
 

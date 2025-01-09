@@ -14,8 +14,6 @@ runner:
   capacity: 1
   # Extra environment variables to run jobs.
   envs:
-    A_TEST_ENV_NAME_1: a_test_env_value_1
-    A_TEST_ENV_NAME_2: a_test_env_value_2
   # Extra environment variables to run jobs from a file.
   # It will be ignored if it's empty or the file doesn't exist.
   env_file: /app/data/act/.env
@@ -42,17 +40,17 @@ runner:
 
 cache:
   # Enable cache server to use actions/cache.
-  enabled: false
+  enabled: true
   # The directory to store the cache data.
   # If it's empty, the cache data will be stored in $HOME/.cache/actcache.
-  dir: ''
+  dir: '/app/data/act/.cache/actcache'
   # The host of the cache server.
   # It's not for the address to listen, but the address to connect from job containers.
   # So 0.0.0.0 is a bad choice, leave it empty to detect automatically.
   host: ''
   # The port of the cache server.
   # 0 means to use a random available port.
-  port: 0
+  port: 8088
   # The external cache server URL. Valid only when enable is true.
   # If it's specified, act_runner will use this URL as the ACTIONS_CACHE_URL rather than start a server by itself.
   # The URL should generally end with "/".
@@ -96,4 +94,4 @@ container:
 host:
   # The parent directory of a job's working directory.
   # If it's empty, $HOME/.cache/act/ will be used.
-  workdir_parent: /app/data/act/.cache/
+  workdir_parent: /app/data/act/.cache/act/
